@@ -373,6 +373,7 @@ void draw()
          bg2_y=0;
          fighter_x=320;
          fighter_y=240;
+         enemyX[0]=0;
          enemyY[4]=floor(random(0,419));
          frameRate(60);
          for(int open=0;open<5;open++)

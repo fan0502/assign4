@@ -367,7 +367,7 @@ void draw()
       image(end2,0,0);
       if(mousePressed)
       {
-         blood_x=25;
+        blood_x=25;
   	treasure_x=random(600);
   	treasure_y=random(25,440);
   	bg1_x=0;
@@ -377,6 +377,7 @@ void draw()
 	fighter_x=320;
 	fighter_y=240;
 	enemyY[4]=floor(random(0,419));
+	enemyX[0]=0;
 	frameRate(60);
   	for(int open=0;open<5;open++)
     	enemyhave[open]=true;

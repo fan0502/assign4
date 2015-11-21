@@ -83,7 +83,6 @@ void setup () {
   for(int g=0;g<8;g++)
     boom[g]=false;
   m=1;
-  f=5;
   shoothave=0;
   enemylose=0;
   
@@ -132,7 +131,7 @@ void draw()
        {
         for(int open=0;open<5;open++)
           enemyhave[open]=true;
-        enemyY[0]=floor(random(0,180));  
+        enemyY[0]=floor(random(230,180));  
         m++; 
         enemyX[0]=0; 
        }
@@ -144,7 +143,7 @@ void draw()
        if(enemylose==5)
        {
          m++;
-         enemyY[0]=floor(random(0,180));
+         enemyY[0]=floor(random(230,180));
          enemyX[0]=0;
          for(int open=0;open<5;open++)
             enemyhave[open]=true;
@@ -171,7 +170,7 @@ void draw()
       {
          m++;
          enemyX[0]=0;
-         enemyY[0]=floor(random(31,175));
+         enemyY[0]=floor(random(150,175));
          for(int open=0;open<8;open++)
             enemyhave[open]=true;
       }
@@ -179,7 +178,7 @@ void draw()
       {
       for(int open=0;open<8;open++)
           enemyhave[open]=true;
-      enemyY[0]=floor(random(31,175));  
+      enemyY[0]=floor(random(150,175));  
       m++; 
       enemyX[0]=0;
       }
@@ -191,7 +190,7 @@ void draw()
       {
         for(int open=0;open<5;open++)
           enemyhave[open]=true;
-        enemyY[4]=floor(random(170,419)); 
+        enemyY[4]=floor(random(50,419)); 
         m++; 
         enemyX[0]=0; 
       }
@@ -203,7 +202,7 @@ void draw()
       if(enemylose==8)
       {
          m++;
-         enemyY[4]=floor(random(170,419)); 
+         enemyY[4]=floor(random(50,419)); 
          enemyX[0]=0;
          for(int open=0;open<5;open++)
             enemyhave[open]=true;
@@ -306,7 +305,6 @@ void draw()
               if((abs(enemyX[r]-shootX[p])<=60)&&(abs(enemyY[r]-shootY[p])<=60))
               {
               enemyhave[r]=false;
-              f=0;
               bownX=enemyX[r];
               bownY=enemyY[r];
               shootleave[p]=false;
@@ -340,12 +338,11 @@ void draw()
   { 
     if(boom[g])
     {
-      if(f<5)
+      for(int f=0;f<5;f++)
       {
          if(frameCount%(60/10)==0)
          {
           image(flame[f],bownX,bownY);
-          f++;
          }
       }
     }
@@ -384,7 +381,6 @@ void draw()
   	for(int g=0;g<8;g++)
 	boom[g]=false;
   	m=1;
-  	f=5;
   	shoothave=0;
   	enemylose=0;
   	end=false;

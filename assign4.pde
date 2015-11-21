@@ -340,9 +340,9 @@ void draw()
   { 
     if(boom[g])
     {
-      if(frameCount%(60/10)==0)
+      if(f<5)
       {
-         if(f<5)
+         if(frameCount%(60/10)==0)
          {
           image(flame[f],bownX,bownY);
           f++;

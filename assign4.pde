@@ -404,7 +404,6 @@ void keyPressed()
         fRight=true;
         break;
       case 32:
-        println(000);
         if(shoothave<5)
         {
            shootnum++;

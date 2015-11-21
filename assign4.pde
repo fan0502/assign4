@@ -22,8 +22,6 @@ float treasure_y;
 //enemy
 float fighter_x;
 float fighter_y;
-final float Fightersize=51;
-final float Enemysize=61;
 //player
 float bg1_x;
 float bg1_y;
@@ -84,6 +82,11 @@ void setup () {
     enemyhave[open]=true;
   for(int g=0;g<8;g++)
     boom[g]=false;
+  m=1;
+  f=5;
+  shoothave=0;
+  enemylose=0;
+  
 }
 void draw()
 {

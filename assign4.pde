@@ -345,6 +345,7 @@ void draw()
           image(flame[f],bownX,bownY);
          }
       }
+      boom[g]=false;
     }
   }
     if(abs(fighter_x-treasure_x)<50&&abs(fighter_y-treasure_y)<50)

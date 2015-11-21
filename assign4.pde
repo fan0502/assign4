@@ -368,23 +368,25 @@ void draw()
       if(mousePressed)
       {
          blood_x=25;
-         treasure_x=random(600);
-         treasure_y=random(25,440);
-         bg1_x=0;
-         bg1_y=0;
-         bg2_x=640;
-         bg2_y=0;
-         fighter_x=320;
-         fighter_y=240;
-         enemyX[0]=0;
-         enemyY[4]=floor(random(0,419));
-         frameRate(60);
-         for(int open=0;open<5;open++)
-             enemyhave[open]=true;
-         for(int g=0;g<8;g++)
-             boom[g]=false;
-         start=false;
-         end=false;
+  	treasure_x=random(600);
+  	treasure_y=random(25,440);
+  	bg1_x=0;
+  	bg1_y=0;
+	bg2_x=640;
+  	bg2_y=0;
+	fighter_x=320;
+	fighter_y=240;
+	enemyY[4]=floor(random(0,419));
+	frameRate(60);
+  	for(int open=0;open<5;open++)
+    	enemyhave[open]=true;
+  	for(int g=0;g<8;g++)
+	boom[g]=false;
+  	m=1;
+  	f=5;
+  	shoothave=0;
+  	enemylose=0;
+  	end=false;
       }
     }else
     {

@@ -379,8 +379,8 @@ void draw()
              enemyhave[open]=true;
          for(int g=0;g<8;g++)
              boom[g]=false;
-         start=true;
-         end=true;
+         start=false;
+         end=false;
       }
     }else
     {

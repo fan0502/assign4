@@ -79,11 +79,9 @@ void setup () {
   frameRate(60);
   for(int open=0;open<5;open++)
     enemyhave[open]=true;
-  f=0;
   m=1;
   shoothave=0;
   enemylose=0;
-  
 }
 void draw()
 {

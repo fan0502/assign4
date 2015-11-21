@@ -16,8 +16,6 @@ PImage shoot;
 //image
 float blood_x;
 //hp
-float life;
-//life
 float treasure_x;
 float treasure_y;
 //hp++
@@ -80,7 +78,6 @@ void setup () {
   bg2_y=0;
   fighter_x=320;
   fighter_y=240;
-  life=3;
   enemyY[4]=floor(random(0,419));
   frameRate(60);
   for(int open=0;open<5;open++)
@@ -331,12 +328,7 @@ void draw()
             boom[p]=true;
             if(blood_x<=5)
             {
-             life--;
-             blood_x=205-abs(blood_x-5);
-             if(life<=0)
-             {
                end=true;
-             }
             }
            }
      }
@@ -362,8 +354,7 @@ void draw()
       treasure_y=random(25,440);
         if(blood_x>205)
         {
-          life++;
-          blood_x=blood_x-200;
+          blood_x=205;
         }
     }
   }
@@ -382,7 +373,6 @@ void draw()
          bg2_y=0;
          fighter_x=320;
          fighter_y=240;
-         life=3;
          enemyY[4]=floor(random(0,419));
          frameRate(60);
          for(int open=0;open<5;open++)

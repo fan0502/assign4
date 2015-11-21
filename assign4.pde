@@ -411,7 +411,7 @@ void keyPressed()
            shoothave++; 
            shootleave[shootnum%5]=true;
            shootX[shootnum%5]=int(fighter_x-31);
-           shootY[shootnum%5]=int(fighter_y+50/4);
+           shootY[shootnum%5]=floor(fighter_y+50/4);
         }
     break;
     }

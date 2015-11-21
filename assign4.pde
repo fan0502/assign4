@@ -48,9 +48,8 @@ int bownX;
 int bownY;
 int f=5;
 int shootnum=0;
-boolean [] boom=new boolean[8];
 void setup () {
-	size(640, 480) ;
+  size(640, 480) ;
   size(640, 480) ;
   bg1=loadImage("img/bg1.png");
   bg2=loadImage("img/bg2.png");
@@ -80,8 +79,7 @@ void setup () {
   frameRate(60);
   for(int open=0;open<5;open++)
     enemyhave[open]=true;
-  for(int g=0;g<8;g++)
-    boom[g]=false;
+  f=0;
   m=1;
   shoothave=0;
   enemylose=0;
@@ -309,7 +307,7 @@ void draw()
               bownY=enemyY[r];
               shootleave[p]=false;
               shoothave--;
-              boom[r]=true;
+              f=0;
               }
            }
          }
@@ -326,7 +324,7 @@ void draw()
             enemyhave[p]=false;
             bownX=enemyX[p];
             bownY=enemyY[p];
-            boom[p]=true;
+            f=0;
             if(blood_x<=5)
             {
                end=true;
@@ -334,20 +332,15 @@ void draw()
            }
      }
   }
-  for(int g=0;g<8;g++)
-  { 
-    if(boom[g])
-    {
-      for(int f=0;f<5;f++)
-      {
          if(frameCount%(60/10)==0)
          {
-          image(flame[f],bownX,bownY);
+               if(f<5)
+               {
+                  image(flame[f],bownX,bownY);
+                  f++;
+               }
          }
       }
-      boom[g]=false;
-    }
-  }
     if(abs(fighter_x-treasure_x)<50&&abs(fighter_y-treasure_y)<50)
     {
       blood_x+=20;
@@ -358,7 +351,7 @@ void draw()
           blood_x=205;
         }
     }
-  }
+
   if(start==true&&end==true)
   {
     if(185<mouseX&&mouseX<460&&300<mouseY&&mouseY<350){
@@ -366,25 +359,24 @@ void draw()
       if(mousePressed)
       {
         blood_x=25;
-  	treasure_x=random(600);
-  	treasure_y=random(25,440);
-  	bg1_x=0;
-  	bg1_y=0;
-	bg2_x=640;
-  	bg2_y=0;
-	fighter_x=320;
-	fighter_y=240;
-	enemyY[4]=floor(random(0,419));
-	enemyX[0]=0;
-	frameRate(60);
-  	for(int open=0;open<5;open++)
-    	enemyhave[open]=true;
-  	for(int g=0;g<8;g++)
-	boom[g]=false;
-  	m=1;
-  	shoothave=0;
-  	enemylose=0;
-  	end=false;
+    treasure_x=random(600);
+    treasure_y=random(25,440);
+    bg1_x=0;
+    bg1_y=0;
+  bg2_x=640;
+    bg2_y=0;
+  fighter_x=320;
+  fighter_y=240;
+  enemyY[4]=floor(random(0,419));
+  enemyX[0]=0;
+  frameRate(60);
+    for(int open=0;open<5;open++)
+      enemyhave[open]=true;
+    f=5;
+    m=1;
+    shoothave=0;
+    enemylose=0;
+    end=false;
       }
     }else
     {
@@ -414,8 +406,7 @@ void keyPressed()
         fRight=true;
         break;
       case 32:
-
-      println(000);
+        println(000);
         if(shoothave<5)
         {
            shootnum++;
